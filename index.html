@@ -1,171 +1,313 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME ARENA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME ARENA</title>
 
-    <style>
+<style>
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+}
 
-        header {
-            text-align: center;
-        }
+.menu{
+    background:#111;
+    padding:15px;
+    text-align:center;
+}
 
-        nav a {
-            margin: 10px;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+}
 
-        .pesquisa {
-            margin: 15px;
-        }
+.pesquisa{
+    margin-top:15px;
+}
 
-        .jogos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.pesquisa input{
+    padding:10px;
+}
 
-        article {
-            width: 300px;
-        }
+.pesquisa button{
+    padding:10px;
+    cursor:pointer;
+}
 
-        article img {
-            width: 300px;
-            height: 180px;
-        }
+.capa{
+    width:90%;
+    margin:20px auto;
+    background:#111;
+    padding:40px;
+    text-align:center;
+    border-radius:10px;
+}
 
-        footer {
-            margin-top: 20px;
-        }
+.titulo{
+    text-align:center;
+    margin:30px 0;
+}
 
-    </style>
+/* JOGOS EM DESTAQUE */
 
+.jogos-destaque{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.jogos-destaque .jogo{
+    width:300px;
+    border:2px solid #00a8ff;
+}
+
+/* TODOS OS JOGOS */
+
+.jogos{
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.jogo{
+    background:#111;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.jogo:hover{
+    transform:scale(1.05);
+}
+
+.jogo img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.jogo h3{
+    text-align:center;
+    padding:10px;
+}
+
+.jogo.selecionado{
+    border:3px solid #00a8ff;
+}
+
+/* INFORMAÇÕES */
+
+#info{
+    width:90%;
+    margin:20px auto;
+    background:#111;
+    border-left:5px solid #00a8ff;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+#info button{
+    background:#00a8ff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+#info button:hover{
+    transform:scale(1.05);
+}
+
+/* RODAPÉ */
+
+.footer{
+    background:#111;
+    margin-top:50px;
+    padding:30px;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+}
+
+.footer div{
+    width:30%;
+}
+
+.footer h3{
+    color:#00a8ff;
+}
+
+footer{
+    background:#0a0a0a;
+    text-align:center;
+    padding:15px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .jogos-destaque{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .jogos{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .footer{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
+    .footer div{
+        width:100%;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
+<div class="menu">
 
-        <h1>GAME ARENA</h1>
+    <h1>GAME ARENA</h1>
 
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Jogos</a>
-            <a href="#">Novidades</a>
-            <a href="#">Suporte</a>
-        </nav>
+    <a href="#">Início</a>
+    <a href="#">Jogos</a>
+    <a href="#">Novidades</a>
+    <a href="#">Suporte</a>
 
-        <div class="pesquisa">
-            <input type="text" placeholder="Pesquisar jogos">
-            <button>Pesquisar</button>
-        </div>
+    <div class="pesquisa">
+        <input type="text" placeholder="Pesquisar jogo">
+        <button>Pesquisar</button>
+    </div>
 
-        <hr>
+</div>
 
-    </header>
+<div class="capa">
+    <h2>GAME ARENA</h2>
+    <p>Os melhores jogos em um só lugar.</p>
+</div>
 
-    <main>
+<div id="info">
+    Clique em um jogo para jogar.
+</div>
 
-        <section>
+<div class="titulo">
+    <h2>Jogos em Destaque</h2>
+</div>
 
-            <h2>Jogos em Destaque</h2>
+<div class="jogos-destaque">
 
-            <div class="jogos">
+    <div class="jogo">
+        <img src="src/roblox.jpg" alt="Roblox">
+        <h3>Roblox</h3>
+    </div>
 
-                <article>
-                    <img src="src/roblox.jpg" alt="Roblox">
-                    <h3>Roblox</h3>
-                </article>
+    <div class="jogo">
+        <img src="src/pubg.jpg" alt="PUBG">
+        <h3>PUBG</h3>
+    </div>
 
-                <article>
-                    <img src="src/pubg.jpg" alt="PUBG">
-                    <h3>PUBG</h3>
-                </article>
+    <div class="jogo">
+        <img src="src/fortnite.jpg" alt="Fortnite">
+        <h3>Fortnite</h3>
+    </div>
 
-                <article>
-                    <img src="src/fortnite.jpg" alt="Fortnite">
-                    <h3>Fortnite</h3>
-                </article>
+</div>
 
-            </div>
+<div class="titulo">
+    <h2>Todos os Jogos</h2>
+</div>
 
-        </section>
+<div class="jogos">
 
-        <hr>
+    <div class="jogo">
+        <img src="src/gta5.jpg" alt="GTA V">
+        <h3>GTA V</h3>
+    </div>
 
-        <section>
+    <div class="jogo">
+        <img src="src/reddead2.jpg" alt="Red Dead Redemption 2">
+        <h3>Red Dead Redemption 2</h3>
+    </div>
 
-            <h2>Jogos</h2>
+    <div class="jogo">
+        <img src="src/eafc25.jpg" alt="EA FC 25">
+        <h3>EA FC 25</h3>
+    </div>
 
-            <div class="jogos">
+    <div class="jogo">
+        <img src="src/minecraft.jpg" alt="Minecraft">
+        <h3>Minecraft</h3>
+    </div>
 
-                <article>
-                    <img src="src/gta5.jpg" alt="GTA V">
-                    <h3>Grand Theft Auto V</h3>
-                </article>
+    <div class="jogo">
+        <img src="src/valorant.jpg" alt="Valorant">
+        <h3>Valorant</h3>
+    </div>
 
-                <article>
-                    <img src="src/reddead2.jpg" alt="Red Dead Redemption 2">
-                    <h3>Red Dead Redemption 2</h3>
-                </article>
+    <div class="jogo">
+        <img src="src/cod.jpg" alt="Call of Duty">
+        <h3>Call of Duty</h3>
+    </div>
 
-                <article>
-                    <img src="src/eafc25.jpg" alt="EA FC 25">
-                    <h3>EA Sports FC 25</h3>
-                </article>
+</div>
 
-                <article>
-                    <img src="src/minecraft.jpg" alt="Minecraft">
-                    <h3>Minecraft</h3>
-                </article>
+<div class="footer">
 
-                <article>
-                    <img src="src/valorant.jpg" alt="Valorant">
-                    <h3>Valorant</h3>
-                </article>
-
-                <article>
-                    <img src="src/cod.jpg" alt="Call of Duty">
-                    <h3>Call of Duty</h3>
-                </article>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <hr>
-
-    <footer>
-
+    <div>
         <h3>Jogos</h3>
-        <p>Roblox| PUBG| Fortnite| GTA V | Red Dead Redemption 2 | EA FC 25 | Minecraft | Valorant | Call of Duty</p>
+        <p>Roblox</p>
+        <p>PUBG</p>
+        <p>Fortnite</p>
+    </div>
 
+    <div>
         <h3>Categorias</h3>
-        <p>Ação | Aventura | Esporte | Battle Royale</p>
+        <p>Ação</p>
+        <p>Aventura</p>
+        <p>Esporte</p>
+    </div>
 
+    <div>
         <h3>Plataformas</h3>
-        <p>PC | PlayStation | Xbox | Nintendo Switch | Mobile</p>
+        <p>PC</p>
+        <p>Xbox</p>
+        <p>PlayStation</p>
+    </div>
 
-        <h3>Comunidade</h3>
-        <p>Novidades | Destaques | Lançamentos | Eventos | Fórum</p>
+</div>
 
-        <hr>
+<footer>
+    <p>© 2026 GAME ARENA</p>
+    <p>Desenvolvido por Heloisa Rodrigues</p>
+</footer>
 
-        <p>© 2026 GAME ARENA. Todos os direitos reservados.</p>
-
-    </footer>
+<script src="script.js"></script>
 
 </body>
-
 </html>
+```
