@@ -186,7 +186,64 @@ function sair(){
     document.getElementById("login").style.display = "block";
 }
 
-// MODO CLARO/ESCURO
 function toggleModo(){
     document.body.classList.toggle("light-mode");
+}
+
+function toggleModo(){
+    document.body.classList.toggle("light-mode");
+}
+
+let tamanhoFonte = 16;
+
+function aumentarFonte(){
+
+    tamanhoFonte += 2;
+
+    document.body.style.fontSize = tamanhoFonte + "px";
+
+    document.querySelectorAll("h1").forEach(function(el){
+        el.style.fontSize = (tamanhoFonte + 12) + "px";
+    });
+
+    document.querySelectorAll("h2").forEach(function(el){
+        el.style.fontSize = (tamanhoFonte + 8) + "px";
+    });
+
+    document.querySelectorAll("h3").forEach(function(el){
+        el.style.fontSize = (tamanhoFonte + 4) + "px";
+    });
+
+    document.querySelectorAll("h5").forEach(function(el){
+        el.style.fontSize = (tamanhoFonte + 2) + "px";
+    });
+
+}
+
+function diminuirFonte(){
+
+    if(tamanhoFonte > 12){
+
+        tamanhoFonte -= 2;
+
+        document.body.style.fontSize = tamanhoFonte + "px";
+
+        document.querySelectorAll("h1").forEach(function(el){
+            el.style.fontSize = (tamanhoFonte + 12) + "px";
+        });
+
+        document.querySelectorAll("h2").forEach(function(el){
+            el.style.fontSize = (tamanhoFonte + 8) + "px";
+        });
+
+        document.querySelectorAll("h3").forEach(function(el){
+            el.style.fontSize = (tamanhoFonte + 4) + "px";
+        });
+
+        document.querySelectorAll("h5").forEach(function(el){
+            el.style.fontSize = (tamanhoFonte + 2) + "px";
+        });
+
+    }
+
 }
